@@ -44,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
@@ -3583,12 +3583,13 @@ TextureImporter:
       terrain tiles_150: 214946303
       terrain tiles_112: -442017535
       terrain tiles_126: 411044145
-      terrain tiles_23: -2068081321
       terrain tiles_51: -218131386
-      terrain tiles_79: -27814467
-      terrain tiles_84: -1246798906
-      terrain tiles_3: -797496163
       terrain tiles_110: 1886390390
+      terrain tiles_84: -1246798906
+      terrain tiles_23: -2068081321
+      terrain tiles_3: -797496163
+      terrain tiles_79: -27814467
+      terrain tiles_157: -870482540
       terrain tiles_78: 545966559
       terrain tiles_69: -1434158074
       terrain tiles_86: 818182546
@@ -3606,7 +3607,6 @@ TextureImporter:
       terrain tiles_6: -1026700591
       terrain tiles_95: 104297293
       terrain tiles_149: 495860208
-      terrain tiles_157: -870482540
       terrain tiles_124: 698422414
       terrain tiles_138: -351913727
       terrain tiles_94: 1299092106
