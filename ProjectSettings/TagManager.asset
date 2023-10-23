@@ -41,3 +41,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: background
+    uniqueID: 2126610805
+    locked: 0
+  - name: animals
+    uniqueID: 44939277
+    locked: 0
+  - name: Player
+    uniqueID: 3372388411
+    locked: 0
+  - name: Trees
+    uniqueID: 3974963487
+    locked: 0
+  - name: foreground
+    uniqueID: 3276567645
+    locked: 0
+  - name: GUI
+    uniqueID: 1295077377
+    locked: 0
