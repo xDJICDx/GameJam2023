@@ -123,75 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &512377345
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -2560626367949918638, guid: c9227ad1da37d0349bf3775461933183, type: 3}
-      propertyPath: m_SortingLayer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: -2560626367949918638, guid: c9227ad1da37d0349bf3775461933183, type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -2560626367949918638, guid: c9227ad1da37d0349bf3775461933183, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -922578885
-      objectReference: {fileID: 0}
-    - target: {fileID: 2556210763865437699, guid: c9227ad1da37d0349bf3775461933183, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2556210763865437699, guid: c9227ad1da37d0349bf3775461933183, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.69
-      objectReference: {fileID: 0}
-    - target: {fileID: 2556210763865437699, guid: c9227ad1da37d0349bf3775461933183, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.79
-      objectReference: {fileID: 0}
-    - target: {fileID: 2556210763865437699, guid: c9227ad1da37d0349bf3775461933183, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2556210763865437699, guid: c9227ad1da37d0349bf3775461933183, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2556210763865437699, guid: c9227ad1da37d0349bf3775461933183, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2556210763865437699, guid: c9227ad1da37d0349bf3775461933183, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2556210763865437699, guid: c9227ad1da37d0349bf3775461933183, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2556210763865437699, guid: c9227ad1da37d0349bf3775461933183, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2556210763865437699, guid: c9227ad1da37d0349bf3775461933183, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2556210763865437699, guid: c9227ad1da37d0349bf3775461933183, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2724349766106586924, guid: c9227ad1da37d0349bf3775461933183, type: 3}
-      propertyPath: m_Name
-      value: Snail
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c9227ad1da37d0349bf3775461933183, type: 3}
 --- !u!1 &558461344
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,6 +878,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 841966058}
+  - component: {fileID: 841966059}
   m_Layer: 0
   m_Name: SnailSpawner
   m_TagString: Untagged
@@ -967,8 +899,23 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &841966059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841966057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce48eb083b466c84c9f6cec09aa72bd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnTimer1: 10
+  Snail1: {fileID: 2724349766106586924, guid: c9227ad1da37d0349bf3775461933183, type: 3}
+  MaxEntityLimit: 20
 --- !u!1 &858130607
 GameObject:
   m_ObjectHideFlags: 0
@@ -1408,7 +1355,7 @@ Transform:
   - {fileID: 1148967609}
   - {fileID: 858130608}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1356244943
 GameObject:
@@ -1990,7 +1937,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1668700409
 MonoBehaviour:
