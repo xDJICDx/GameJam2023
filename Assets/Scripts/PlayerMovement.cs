@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = new quaternion(0f, 180f, 0f ,0f);
         }
 
-        if (Input.GetKey(KeyCode.D) && transform.position.x < 5.8f)
+        if (Input.GetKey(KeyCode.D) && transform.position.x < 5.8fx)
         {
             PlayerX += PlayerSpeed * Time.deltaTime;
             animator.SetFloat("speed", 1f);
