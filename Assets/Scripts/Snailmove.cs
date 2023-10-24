@@ -8,6 +8,7 @@ using Random = UnityEngine.Random;
 
 public class Snailmove : MonoBehaviour
 {
+    public ShopMechenics shopMechenics;
     public GameObject Player;
     private float xPos;
     private float yPos;
@@ -25,12 +26,14 @@ public class Snailmove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        shopMechenics = GameObject.FindGameObjectWithTag("ShopMechanics").GetComponentInChildren<ShopMechenics>();
         Player = GameObject.FindWithTag("Player");
         Velocity = 1f;
         minX = -4.7f;
         maxX = 4.8f;
         minY = -3f;
         maxY = 3f;
+        transform.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
 
     }
 
@@ -40,6 +43,7 @@ public class Snailmove : MonoBehaviour
 
         if(transform.position.x < -1f && transform.position.y > 3f) 
         {
+            shopMechenics.SnailCaught();
             Destroy(gameObject);
         }
 
