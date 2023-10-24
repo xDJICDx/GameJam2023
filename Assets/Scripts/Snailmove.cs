@@ -19,7 +19,7 @@ public class Snailmove : MonoBehaviour
     public float Velocity = 1f;
     public float range = 0.2f;
     public bool snailGettingChased = false;
-    public float ChaseRanege = 1f;
+    public float ChaseRange = 2f;
     public bool FirstLocation = false;
 
     // Start is called before the first frame update
@@ -37,6 +37,13 @@ public class Snailmove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if(transform.position.x < -1f && transform.position.y > 3f) 
+        {
+            Destroy(gameObject);
+        }
+
+
         if (!snailGettingChased)
         {
             if(!FirstLocation || 
@@ -46,24 +53,31 @@ public class Snailmove : MonoBehaviour
                 newLocation();
                 FirstLocation = true;
             }
-            seeekLocation();
+            seekLocation();
         }
 
-        if(Player.transform.position.x - range > transform.position.x && 
-           Player.transform.position.x + range < transform.position.x &&
-           Player.transform.position.y - range > transform.position.y &&
-           Player.transform.position.y + range < transform.position.y) 
+        if(Player.transform.position.x > transform.position.x - ChaseRange && 
+           Player.transform.position.x < transform.position.x + ChaseRange &&
+           Player.transform.position.y > transform.position.y - ChaseRange &&
+           Player.transform.position.y < transform.position.y + ChaseRange)
         {
-            Debug.Log("close to player");
+            snailGettingChased = true;
+            FirstLocation = false; 
+
+            xPos = transform.position.x + (Player.transform.position.x - transform.position.x) * -1;
+            yPos = transform.position.y + (Player.transform.position.y - transform.position.y) * -1;
+
+            seekLocation();
+
         }
         else
         {
-            Debug.lo
+            snailGettingChased = false;
         }
 
     }
     
-    void seeekLocation()
+    void seekLocation()
     {
         transform.position = Vector2.MoveTowards(transform.position, new Vector2(xPos, yPos), Velocity * Time.deltaTime);
         var direction = transform.position - new Vector3(xPos, yPos, 0);

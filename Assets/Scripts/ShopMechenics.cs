@@ -1,6 +1,7 @@
 using Microsoft.Unity.VisualStudio.Editor;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
@@ -15,6 +16,8 @@ public class ShopMechenics : MonoBehaviour
     public Color ShopColor2;
 
     public bool ShopOnOrOf = false;
+
+    public int SnailCount = 0;
 
 
 
@@ -42,5 +45,10 @@ public class ShopMechenics : MonoBehaviour
             ShopImage2.color = ShopColor2;
             ShopOnOrOf = true;
         }
+    }
+
+    public void SnailCaught()
+    {
+        SnailCount++;
     }
 }

@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cb21aaed2ba9064bbfc4c8a99229491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
   rigidbody: {fileID: -4796501286501603003}
   minX: 0
   maxX: 0
@@ -106,6 +107,9 @@ MonoBehaviour:
   maxY: 0
   Velocity: 1
   range: 0.2
+  snailGettingChased: 0
+  ChaseRange: 1.5
+  FirstLocation: 0
 --- !u!50 &-4796501286501603003
 Rigidbody2D:
   serializedVersion: 4
