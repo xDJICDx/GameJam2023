@@ -61,7 +61,7 @@ public class ShopMechenics : MonoBehaviour
     public float MinimalRebirthSnailCount = 100;
     public float rebirthMulti = 1;
 
-    
+
 
 
 
@@ -204,6 +204,7 @@ public class ShopMechenics : MonoBehaviour
         {
             if (TotalSnailCount > MinimalRebirthSnailCount)
             {
+                playerMovement.rebirth = playerMovement.rebirth + 1f;
                 rebirthMulti = 1 + (math.sqrt(TotalSnailCount) / 10);
                 MinimalRebirthSnailCount = TotalSnailCount;
                 RebirthReset();

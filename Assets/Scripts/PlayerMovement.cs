@@ -13,7 +13,12 @@ public class PlayerMovement : MonoBehaviour
     public float PlayerSpeed = 2f;
     public float ExtraSpeed = 1f;
 
+    public float rebirth;
 
+    private void Start()
+    {
+        rebirth = 0f;
+    }
 
 
     // Update is called once per frame
@@ -26,12 +31,20 @@ public class PlayerMovement : MonoBehaviour
         {
             PlayerY += PlayerSpeed * ExtraSpeed * Time.deltaTime;
             animator.SetFloat("speed", 1f);
+            if (rebirth == 1)
+            {
+                animator.Play("ruru");
+            }
         }
 
         if (Input.GetKey(KeyCode.S) && transform.position.y> -3)
         {
             PlayerY -= PlayerSpeed * ExtraSpeed * Time.deltaTime;
             animator.SetFloat("speed", 1f);
+            if (rebirth == 1)
+            {
+                animator.Play("ruru");
+            }
         }
 
         if (Input.GetKey(KeyCode.A) && transform.position.x > -5.7f)
@@ -39,6 +52,10 @@ public class PlayerMovement : MonoBehaviour
             PlayerX -= PlayerSpeed * ExtraSpeed * Time.deltaTime;
             animator.SetFloat("speed", 1f);
             transform.rotation = new quaternion(0f, 180f, 0f ,0f);
+            if (rebirth == 1)
+            {
+                animator.Play("ruru");
+            }
         }
 
         if (Input.GetKey(KeyCode.D) && transform.position.x < 5.8f)
@@ -46,11 +63,19 @@ public class PlayerMovement : MonoBehaviour
             PlayerX += PlayerSpeed * ExtraSpeed * Time.deltaTime;
             animator.SetFloat("speed", 1f);
             transform.rotation = new quaternion(0f, 0f, 0f, 0f);
+            if (rebirth == 1)
+            {
+                animator.Play("ruru");
+            }
         }
 
         if(!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
         {
             animator.SetFloat("speed", 0f);
+            if (rebirth == 1)
+            {
+                animator.Play("aqu");
+            }
         }
 
         if ( Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D) || 
