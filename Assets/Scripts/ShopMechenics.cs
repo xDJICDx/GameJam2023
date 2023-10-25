@@ -21,9 +21,9 @@ public class ShopMechenics : MonoBehaviour
     public SnailSpawner spawner;
 
     public bool ShopOnOrOf = false;
-    public int SnailCount = 0;
-    public int TotalSnailCount = 0;
-    public int snailMarketing = 1;
+    public float SnailCount = 0;
+    public float TotalSnailCount = 0;
+    public float snailMarketing = 1;
 
     public int BuyAmountItem1 = 0;
     public int BuyAmountItem2 = 0;
@@ -58,7 +58,7 @@ public class ShopMechenics : MonoBehaviour
     public TextMeshProUGUI Button4UpgradeCost;
     public TextMeshProUGUI Button5UpgradeCost;
 
-    public int MinimalRebirthSnailCount = 100;
+    public float MinimalRebirthSnailCount = 100;
     public float rebirthMulti = 1;
 
     
@@ -97,7 +97,7 @@ public class ShopMechenics : MonoBehaviour
         } 
         else if(TotalSnailCount > MinimalRebirthSnailCount)
         {
-            RebirthButtonText.SetText("Rebirth: " + 1 + (math.sqrt(TotalSnailCount) / 10) + " X multiplier");
+            RebirthButtonText.SetText("Rebirth: " + (1 + (math.sqrt(TotalSnailCount) / 10)) + " X multiplier");
         }
 
     }
@@ -237,8 +237,8 @@ public class ShopMechenics : MonoBehaviour
 
     public void SnailCaught()
     {
-        SnailCount+= snailMarketing;
-        TotalSnailCount += snailMarketing;
+        SnailCount += math.round(snailMarketing * rebirthMulti);
+        TotalSnailCount += math.round(snailMarketing * rebirthMulti);
     }
 
     public void hideShop()
