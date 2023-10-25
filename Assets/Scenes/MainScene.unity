@@ -3491,6 +3491,7 @@ MonoBehaviour:
   spawnTimer1: 10
   Snail1: {fileID: 3954137263904768726, guid: a11304350ae7bd542873ed493d3ffd4f, type: 3}
   MaxEntityLimit: 20
+  CurrentEntityCount: 0
   SpawnAmount: 1
 --- !u!4 &496252044
 Transform:
