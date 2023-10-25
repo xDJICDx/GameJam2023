@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -60,7 +61,7 @@ public class ShopMechenics : MonoBehaviour
     public int MinimalRebirthSnailCount = 100;
     public float rebirthMulti = 1;
 
-
+    
 
 
 
@@ -131,7 +132,8 @@ public class ShopMechenics : MonoBehaviour
 
     public void BuyButton1()
     {
-        if(SnailCount >= PriceItem1 && BuyAmountItem1 <= 10)
+        if (ShopOnOrOf) { 
+        if (SnailCount >= PriceItem1 && BuyAmountItem1 <= 10)
         {
             SnailCount -= PriceItem1;
             spawner.spawnTimer1 /= 1.25f;
@@ -139,57 +141,73 @@ public class ShopMechenics : MonoBehaviour
             BuyAmountItem1++;
         }
     }
+    }
 
     public void BuyButton2()
     {
-        if(SnailCount >= PriceItem2)
+        if (ShopOnOrOf)
         {
-            SnailCount -= PriceItem2;
-            spawner.SpawnAmount++;
-            PriceItem2 *= 3;
-            BuyAmountItem2++;
+            if (SnailCount >= PriceItem2)
+            {
+                SnailCount -= PriceItem2;
+                spawner.SpawnAmount++;
+                PriceItem2 *= 3;
+                BuyAmountItem2++;
+            }
         }
     }
 
     public void BuyButton3()
     {
-        if(SnailCount >= PriceItem3)
+        if (ShopOnOrOf)
         {
-            SnailCount-= PriceItem3;
-            snailMarketing++;
-            PriceItem3 *= 2;
-            BuyAmountItem3++;
+            if (SnailCount >= PriceItem3)
+            {
+                SnailCount -= PriceItem3;
+                snailMarketing++;
+                PriceItem3 *= 2;
+                BuyAmountItem3++;
+            }
         }
     }
 
     public void BuyButton4()
     {
-        if (SnailCount >= PriceItem4)
+        if (ShopOnOrOf)
         {
-            SnailCount -= PriceItem4;
-            spawner.MaxEntityLimit = math.round(spawner.MaxEntityLimit * 1.5f);
-            PriceItem5 *= 5;
-            BuyAmountItem4++;
+            if (SnailCount >= PriceItem4)
+            {
+                SnailCount -= PriceItem4;
+                spawner.MaxEntityLimit = math.round(spawner.MaxEntityLimit * 1.5f);
+                PriceItem5 *= 5;
+                BuyAmountItem4++;
+            }
         }
     }
     public void BuyButton5()
     {
-        if(SnailCount >= PriceItem5 && BuyAmountItem5 <= 3)
+        if (ShopOnOrOf)
         {
-            SnailCount -= PriceItem5;
-            playerMovement.ExtraSpeed *= 1.5f;
-            PriceItem5 *= 2;
-            BuyAmountItem5++;
+            if (SnailCount >= PriceItem5 && BuyAmountItem5 <= 3)
+            {
+                SnailCount -= PriceItem5;
+                playerMovement.ExtraSpeed *= 1.5f;
+                PriceItem5 *= 2;
+                BuyAmountItem5++;
+            }
         }
     }
 
     public void Rebirth()
     {
-        if(TotalSnailCount > MinimalRebirthSnailCount)
+        if (ShopOnOrOf)
         {
-            rebirthMulti =1 + (math.sqrt(TotalSnailCount) / 10);
-            MinimalRebirthSnailCount = TotalSnailCount;
-            RebirthReset();
+            if (TotalSnailCount > MinimalRebirthSnailCount)
+            {
+                rebirthMulti = 1 + (math.sqrt(TotalSnailCount) / 10);
+                MinimalRebirthSnailCount = TotalSnailCount;
+                RebirthReset();
+            }
         }
     }
 
