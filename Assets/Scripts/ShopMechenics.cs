@@ -179,7 +179,7 @@ public class ShopMechenics : MonoBehaviour
             {
                 SnailCount -= PriceItem4;
                 spawner.MaxEntityLimit = math.round(spawner.MaxEntityLimit * 1.5f);
-                PriceItem5 *= 5;
+                PriceItem4 *= 5;
                 BuyAmountItem4++;
             }
         }
