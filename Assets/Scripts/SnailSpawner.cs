@@ -8,8 +8,9 @@ public class SnailSpawner : MonoBehaviour
     public float spawnTimer1= 10;
     public GameObject Snail1;
     private bool TimerBool1 = false;
-    public int MaxEntityLimit = 20;
-    private int CurrentEntityCount = 0; 
+    public float MaxEntityLimit = 20f;
+    private int CurrentEntityCount = 0;
+    public int SpawnAmount = 1;
 
 
 
@@ -18,7 +19,10 @@ public class SnailSpawner : MonoBehaviour
         if (!TimerBool1 && CurrentEntityCount < MaxEntityLimit)
         {
             TimerBool1 = true;
-            Instantiate(Snail1);
+            for (int i = 0; i < SpawnAmount; i++) 
+            {
+                Instantiate(Snail1);
+            }
             CurrentEntityCount++;
             StartCoroutine(DelaySnail1());
         }

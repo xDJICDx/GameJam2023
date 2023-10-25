@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public float PlayerY = 0f;
 
     public float PlayerSpeed = 2f;
+    public float ExtraSpeed = 1f;
 
 
 
@@ -21,29 +22,28 @@ public class PlayerMovement : MonoBehaviour
 
         transform.position = new Vector2(PlayerX, PlayerY);
 
-
         if (Input.GetKey(KeyCode.W) && transform.position.y < 3)
         {
-            PlayerY += PlayerSpeed * Time.deltaTime;
+            PlayerY += PlayerSpeed * ExtraSpeed * Time.deltaTime;
             animator.SetFloat("speed", 1f);
         }
 
         if (Input.GetKey(KeyCode.S) && transform.position.y> -3)
         {
-            PlayerY -= PlayerSpeed * Time.deltaTime;
+            PlayerY -= PlayerSpeed * ExtraSpeed * Time.deltaTime;
             animator.SetFloat("speed", 1f);
         }
 
         if (Input.GetKey(KeyCode.A) && transform.position.x > -5.7f)
         {
-            PlayerX -= PlayerSpeed * Time.deltaTime;
+            PlayerX -= PlayerSpeed * ExtraSpeed * Time.deltaTime;
             animator.SetFloat("speed", 1f);
             transform.rotation = new quaternion(0f, 180f, 0f ,0f);
         }
 
         if (Input.GetKey(KeyCode.D) && transform.position.x < 5.8f)
         {
-            PlayerX += PlayerSpeed * Time.deltaTime;
+            PlayerX += PlayerSpeed * ExtraSpeed * Time.deltaTime;
             animator.SetFloat("speed", 1f);
             transform.rotation = new quaternion(0f, 0f, 0f, 0f);
         }
