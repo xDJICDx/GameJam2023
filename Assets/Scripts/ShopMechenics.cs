@@ -31,8 +31,8 @@ public class ShopMechenics : MonoBehaviour
     public int BuyAmountItem5 = 0;
 
     public int PriceItem1 = 5;
-    public int PriceItem2 = 15;
-    public int PriceItem3 = 25;
+    public int PriceItem2 = 10;
+    public int PriceItem3 = 15;
     public int PriceItem4 = 10;
     public int PriceItem5 = 50;
 
@@ -135,7 +135,7 @@ public class ShopMechenics : MonoBehaviour
         {
             SnailCount -= PriceItem1;
             spawner.spawnTimer1 /= 1.25f;
-            PriceItem1 *= 4;
+            PriceItem1 *= 3;
             BuyAmountItem1++;
         }
     }
@@ -197,8 +197,8 @@ public class ShopMechenics : MonoBehaviour
     {
 
         PriceItem1 = 5;
-        PriceItem2 = 15;
-        PriceItem3 = 25;
+        PriceItem2 = 10;
+        PriceItem3 = 15;
         PriceItem4 = 10;
         PriceItem5 = 50;
         BuyAmountItem1 = 0;
