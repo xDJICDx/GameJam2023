@@ -9,6 +9,7 @@ using Random = UnityEngine.Random;
 public class Snailmove : MonoBehaviour
 {
     public ShopMechenics shopMechenics;
+    public SnailSpawner spawner;
     public GameObject Player;
     private float xPos;
     private float yPos;
@@ -26,6 +27,7 @@ public class Snailmove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        spawner = GameObject.FindGameObjectWithTag("SnailSpawner").GetComponentInChildren<SnailSpawner>();
         shopMechenics = GameObject.FindGameObjectWithTag("ShopMechanics").GetComponentInChildren<ShopMechenics>();
         Player = GameObject.FindWithTag("Player");
         Velocity = 1f;
@@ -44,6 +46,7 @@ public class Snailmove : MonoBehaviour
         if(transform.position.x < -1f && transform.position.y > 3f) 
         {
             shopMechenics.SnailCaught();
+            spawner.CurrentEntityCount--;
             Destroy(gameObject);
         }
 

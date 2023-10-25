@@ -9,7 +9,7 @@ public class SnailSpawner : MonoBehaviour
     public GameObject Snail1;
     private bool TimerBool1 = false;
     public float MaxEntityLimit = 20f;
-    private int CurrentEntityCount = 0;
+    public int CurrentEntityCount = 0;
     public int SpawnAmount = 1;
 
 
